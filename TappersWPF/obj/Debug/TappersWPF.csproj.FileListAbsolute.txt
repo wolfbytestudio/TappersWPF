@@ -113,3 +113,4 @@ C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.Proper
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.csproj.GenerateResource.Cache
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.exe
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.pdb
+C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.csprojResolveAssemblyReference.cache
