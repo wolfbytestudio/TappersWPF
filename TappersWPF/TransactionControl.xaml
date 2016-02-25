@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:TappersWPF"
              mc:Ignorable="d" Width="500" Height="99" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave">
     <Grid x:Name="grdMain" Background="White" Margin="0,5,22,0" Height="87" VerticalAlignment="Top" HorizontalAlignment="Right" Width="385">
-        <Rectangle Fill="#FFCBCBCB" HorizontalAlignment="Left" Height="99" Margin="-51,-5,0,-7" VerticalAlignment="Top" Width="2"/>
-        <Rectangle Fill="White" HorizontalAlignment="Left" Height="65" Margin="-82,10,0,0" VerticalAlignment="Top" Width="65" RadiusX="65" RadiusY="65" Stroke="#FFCBCBCB" StrokeThickness="2">
+        <Rectangle x:Name="recTop" Fill="#FFCBCBCB" HorizontalAlignment="Left" Height="16" Margin="-51,-5,0,0" VerticalAlignment="Top" Width="2"/>
+        <Rectangle x:Name="recCircle" Fill="White" HorizontalAlignment="Left" Height="65" Margin="-82,10,0,0" VerticalAlignment="Top" Width="65" RadiusX="65" RadiusY="65" Stroke="#FFCBCBCB" StrokeThickness="2">
 
         </Rectangle>
         <Image x:Name="imgToFrom" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="65" Margin="-82,10,0,0" Source="images/to_icon.png"/>
@@ -15,6 +15,8 @@
         <TextBlock x:Name="lblTitle" Margin="10,6,70,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" FontSize="16"><Run Language="en-gb" Text="You lent £50 to Zack and for no reason, wrap"/></TextBlock>
         <TextBlock x:Name="lblDate" HorizontalAlignment="Left" Margin="315,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFB0B0B0" Width="65" TextAlignment="Center" Height="17"><Run Language="en-gb" Text="01/12/16"/></TextBlock>
         <TextBlock x:Name="lblReason" Margin="10,33,53,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Foreground="#FF858585"><Run Language="en-gb" Text="Place holder reason"/></TextBlock>
+        <TextBlock x:Name="lblDelete" HorizontalAlignment="Left" Margin="328,23,0,0" TextWrapping="Wrap" Text="x" VerticalAlignment="Top" Height="35" Width="34" Foreground="#FFCD8686" FontSize="26.667" FontFamily="Segoe UI Light" TextAlignment="Center" Padding="0,0,0,1" MouseUp="lblDelete_MouseUp"/>
+        <Rectangle x:Name="recBottom" Fill="#FFCBCBCB" HorizontalAlignment="Left" Height="20" Margin="-51,74,0,-7" VerticalAlignment="Top" Width="2"/>
 
     </Grid>
 </UserControl>

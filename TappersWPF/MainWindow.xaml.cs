@@ -27,19 +27,27 @@ namespace TappersWPF
 
         public MainWindow()
         {
-            Cache.loadCache();
+            try
+            {
+                Cache.loadCache();
 
-            Cache.Instance.init();
+                Cache.Instance.init();
 
-            cache = Cache.Instance;
+                cache = Cache.Instance;
 
-            cache.attemptCharacterUpdates();
-            cache.attemptBackgroundUpdates();
+                cache.attemptCharacterUpdates();
+                cache.attemptBackgroundUpdates();
 
 
-            InitializeComponent();
+                InitializeComponent();
 
-            instance = this;
+                instance = this;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
 
         }
 

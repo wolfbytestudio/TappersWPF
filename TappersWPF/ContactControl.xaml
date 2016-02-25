@@ -14,6 +14,6 @@
         <Label x:Name="lblDate" Content="23/02/2016" HorizontalAlignment="Left" Margin="279,7,0,0" VerticalAlignment="Top" Foreground="#FFACACAC" FontSize="10.667"/>
         <Rectangle x:Name="recDivider" Fill="#FFC5C5C5" Margin="60,84,0,0" Height="01"/>
         <TextBlock x:Name="lblDelete" HorizontalAlignment="Left" Margin="295,28,0,0" TextWrapping="Wrap" Text="x" VerticalAlignment="Top" Height="35" Width="34" Foreground="#FFCD8686" FontSize="26.667" FontFamily="Segoe UI Light" TextAlignment="Center" Padding="0,0,0,1" MouseEnter="lblDelete_MouseEnter" MouseLeave="lblDelete_MouseLeave" MouseUp="lblDelete_MouseUp"/>
-        <Image x:Name="imgSmallCharacter" HorizontalAlignment="Left" Height="50" VerticalAlignment="Center" Width="50" Margin="7,18,0,17"/>
+        <Image x:Name="imgSmallCharacter" HorizontalAlignment="Left" Height="50" VerticalAlignment="Center" Width="50" Margin="7,18,0,17" RenderOptions.BitmapScalingMode="Fant"/>
     </Grid>
 </UserControl>

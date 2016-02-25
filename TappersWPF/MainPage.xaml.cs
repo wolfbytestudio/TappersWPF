@@ -38,7 +38,16 @@ namespace TappersWPF
             set { selectedPage = value; }
         }
 
-        private ContactControl delete;
+        private TransactionControl toDeleteTransaction;
+        public TransactionControl ToDelteTransaction
+        {
+            get { return toDeleteTransaction; }
+            set { toDeleteTransaction = value; }
+        }
+
+
+
+        private ContactControl contactToDelete;
 
         private BlurEffect mainBlurEffect = new BlurEffect();
 
@@ -119,10 +128,12 @@ namespace TappersWPF
             foreach (Character ch in Cache.Instance.Characters)
             {
                 Image image = new Image();
-                image.Width = 50;
-                image.Height = 50;
+                image.Width = 60;
+                image.Height = 60;
+                
                 image.Source = Cache.Instance.getLargeImageFor(ch.Id);
                 image.MouseUp += character_mouseUp;
+                RenderOptions.SetBitmapScalingMode(image, BitmapScalingMode.Fant);
                 characterBoxes.Add(image, ch);
                 stkCharacters.Children.Add(image);
             }
@@ -142,8 +153,7 @@ namespace TappersWPF
                 rec.RadiusY = 100;
                 rec.Margin = new Thickness(0, 0, 5, 5);
                 rec.Stroke = new SolidColorBrush(Colors.Black);
-                LinearGradientBrush gradientBrush = new LinearGradientBrush(Utils.getBackgroundColour(bg.PrimaryColour
-), Utils.getBackgroundColour(bg.SecondaryColour), new Point(0.5, 0), new Point(0.5, 1));
+                LinearGradientBrush gradientBrush = new LinearGradientBrush(Utils.getBackgroundColour(bg.PrimaryColour), Utils.getBackgroundColour(bg.SecondaryColour), new Point(0.5, 0), new Point(0.5, 1));
                 rec.MouseUp += bg_mouseUp;
                 rec.Fill = gradientBrush;
                 backgroundBoxes.Add(rec, bg);
@@ -168,10 +178,10 @@ namespace TappersWPF
         private void character_mouseUp(object sender, MouseButtonEventArgs e)
         {
             Image image = (Image)sender;
-            image.Width = 50;
+            image.Width = 60;
             imgCharacterPreview.Source = image.Source;
             characterSelected = characterBoxes[image].Id;
-            image.Height = 50;
+            image.Height = 60;
         }
 
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
@@ -283,7 +293,7 @@ namespace TappersWPF
 
         public void sendConfirmDelete(ContactControl toDelete)
         {
-            this.delete = toDelete;
+            this.contactToDelete = toDelete;
             unselectAll();
             SelectedPage = null;
             rightGrid(Visibility.Hidden);
@@ -293,9 +303,21 @@ namespace TappersWPF
             grdConfirm.Visibility = Visibility.Visible;
 
             sendBackgroundblur();
-
+            toDeleteTransaction = null;
             lblConfirmDeleteText.Text = "Are you sure you want to delete the contact " + toDelete.BindedContact.Name + "?";
             
+
+        }
+
+        public void sendConfirmDeleteTransaction()
+        {
+            grdMain.IsEnabled = false;
+            recBlackbakground.Visibility = Visibility.Visible;
+            grdConfirm.Visibility = Visibility.Visible;
+
+            sendBackgroundblur();
+            contactToDelete = null;
+            lblConfirmDeleteText.Text = "Are you sure you want to delete this transaction?";
 
         }
 
@@ -336,25 +358,40 @@ namespace TappersWPF
             recBlackbakground.Visibility = Visibility.Hidden;
             grdConfirm.Visibility = Visibility.Hidden;
             grdMain.Effect = null;
+
+            toDeleteTransaction = null;
+            contactToDelete = null;
+
         }
 
         private void btnConfirmDelete_Click(object sender, RoutedEventArgs e)
         {
+            if(toDeleteTransaction != null)
+            {
+                toDeleteTransaction._Contact.Transactions.Remove(toDeleteTransaction.BindedTransaction);
+                stkTransactions.Children.Remove(toDeleteTransaction);
+            }
+            else
+            {
+                Cache.Instance.GetLibrary.Contacts.Remove(contactToDelete.BindedContact);
+                MainPage.Instance.stkContacts.Children.Remove(contactToDelete);
+                MainPage.Instance.lblContactCounter.Content = Cache.Instance.GetLibrary.Contacts.Count;
+
+                if (selectedPage == contactToDelete)
+                {
+                    MainPage.Instance.rightGrid(Visibility.Hidden);
+                }
+                
+            }
+
             grdMain.Effect = null;
             grdMain.IsEnabled = true;
             recBlackbakground.Visibility = Visibility.Hidden;
             grdConfirm.Visibility = Visibility.Hidden;
-
-            Cache.Instance.GetLibrary.Contacts.Remove(delete.BindedContact);
-            MainPage.Instance.stkContacts.Children.Remove(delete);
-            MainPage.Instance.lblContactCounter.Content = Cache.Instance.GetLibrary.Contacts.Count;
-
-            if (selectedPage == delete)
-            {
-                MainPage.Instance.rightGrid(Visibility.Hidden);
-            }
             lblTotalEveryone.Text = getTotal();
-
+            toDeleteTransaction = null;
+            contactToDelete = null;
+            lblTotalTransactions.Text = selectedPage.getTotal();
 
         }
 

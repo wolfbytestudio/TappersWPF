@@ -30,9 +30,9 @@
                 <Rectangle x:Name="recRightColour" Fill="#FFC3C3D1" Height="224" VerticalAlignment="Top"/>
                 <Rectangle Fill="#3F000000" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="515"/>
                 <TextBlock x:Name="txtRightName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Foreground="#FFF8F8F8" FontSize="18" Width="515" TextAlignment="Center" Margin="0,4,0,0"/>
-                <Image x:Name="imgBigCharacter" HorizontalAlignment="Left" Height="170" Margin="177,54,0,0" VerticalAlignment="Top" Width="170" Stretch="Fill" Source="images/bin_history.png" >
-                    
-                </Image>
+                <Image x:Name="imgBigCharacter" HorizontalAlignment="Left" Height="170" Margin="177,54,0,0" VerticalAlignment="Top" Width="170" Stretch="Fill" RenderOptions.BitmapScalingMode="Fant"/>
+
+
                 <ScrollViewer HorizontalAlignment="Left" Height="315" Margin="0,301,0,0" VerticalAlignment="Top" Width="515">
                     <WrapPanel x:Name="stkTransactions" Height="auto" Width="498" Background="#FFE4E4E4">
                     </WrapPanel>
@@ -44,12 +44,12 @@
 
             </Grid>
 
-            <Image x:Name="imgUpload" HorizontalAlignment="Left" Height="33" Margin="212,0,0,0" VerticalAlignment="Top" Width="33" Source="images/upload.png" MouseUp="imgUpload_MouseUp">
+            <Image x:Name="imgUpload" HorizontalAlignment="Left" Height="33" Margin="212,0,0,0" VerticalAlignment="Top" Width="33" Source="images/upload.png" MouseUp="imgUpload_MouseUp" Visibility="Hidden">
                 <Image.Effect>
                     <BlurEffect Radius="1"/>
                 </Image.Effect>
             </Image>
-            <Image x:Name="imgDownload" HorizontalAlignment="Left" Height="33" Margin="144,0,0,0" VerticalAlignment="Top" Width="33" Source="images/download.png" MouseUp="imgDownload_MouseUp">
+            <Image x:Name="imgDownload" HorizontalAlignment="Left" Height="33" Margin="144,0,0,0" VerticalAlignment="Top" Width="33" Source="images/download.png" MouseUp="imgDownload_MouseUp" Visibility="Hidden">
                 <Image.Effect>
                     <BlurEffect Radius="1"/>
                 </Image.Effect>
@@ -67,7 +67,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="10,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="78" FontSize="18"><Run Language="en-gb" Text="Amount:"/></TextBlock>
             <TextBox x:Name="txtNewTransAmount" HorizontalAlignment="Left" Height="33" Margin="93,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297" FontSize="18"/>
             <RadioButton x:Name="rdbTo" Content="Lent to" HorizontalAlignment="Left" Margin="75,116,0,0" VerticalAlignment="Top" Width="91" Height="33" FontSize="18"/>
-            <RadioButton x:Name="rdbFrom" Content="Lent from" HorizontalAlignment="Left" Margin="245,116,0,0" VerticalAlignment="Top" Width="91" Height="33" FontSize="18"/>
+            <RadioButton x:Name="rdbFrom" Content="Lent from" HorizontalAlignment="Left" Margin="245,116,0,0" VerticalAlignment="Top" Width="145" Height="33" FontSize="18"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="78" FontSize="18"><Run Language="en-gb" Text="Reason:"/></TextBlock>
             <TextBox x:Name="txtNewTranReason" HorizontalAlignment="Left" Height="33" Margin="93,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297" FontSize="18"/>
             <Button x:Name="btnNewTranCancel" Content="Cancel" HorizontalAlignment="Left" Margin="35,256,0,0" VerticalAlignment="Top" Width="108" Height="37" FontSize="16" Click="btnNewTranCancel_Click"/>
@@ -91,10 +91,10 @@
             <ScrollViewer Margin="167,286,10,83" Background="#0C000000">
                 <WrapPanel x:Name="stkBackgrounds" HorizontalAlignment="Left" Height="auto" Margin="0,0,0,0" VerticalAlignment="Top" Width="306"/>
             </ScrollViewer>
-            <Button x:Name="btnNewCancel" Content="Cancel" HorizontalAlignment="Left" Margin="75,448,0,0" VerticalAlignment="Top" Width="107" Height="42" Click="btnNewCancel_Click"/>
-            <Button x:Name="btnConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="286,448,0,0" VerticalAlignment="Top" Width="118" Height="42" Click="btnConfirm_Click"/>
+            <Button x:Name="btnNewCancel" Content="Cancel" HorizontalAlignment="Left" Margin="119,448,0,0" VerticalAlignment="Top" Width="118" Height="42" Click="btnNewCancel_Click"/>
+            <Button x:Name="btnConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="296,448,0,0" VerticalAlignment="Top" Width="118" Height="42" Click="btnConfirm_Click"/>
             <Rectangle Fill="#19000000" HorizontalAlignment="Left" Height="131" Margin="10,117,0,0" VerticalAlignment="Top" Width="157"/>
-            <Image x:Name="imgCharacterPreview" HorizontalAlignment="Left" Height="126" Margin="22,122,0,0" VerticalAlignment="Top" Width="126"/>
+            <Image x:Name="imgCharacterPreview" HorizontalAlignment="Left" Height="126" Margin="22,122,0,0" VerticalAlignment="Top" Width="126" RenderOptions.BitmapScalingMode="Fant"/>
             <Rectangle Fill="#19000000" HorizontalAlignment="Left" Height="131" Margin="10,286,0,0" VerticalAlignment="Top" Width="157"/>
             <Rectangle x:Name="recBackgroundPreview" Fill="#FFEAEAEA" HorizontalAlignment="Left" Height="100" Margin="37,306,0,0" VerticalAlignment="Top" Width="100" RadiusX="100" RadiusY="100"/>
         </Grid>

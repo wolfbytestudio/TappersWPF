@@ -260,8 +260,6 @@ namespace TappersWPF
                 }
             }
 
-            private Bitmap bitmap;
-
             public List<Character> getAllCharacters()
             {
                 try
