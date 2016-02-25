@@ -44,10 +44,7 @@
 
             </Grid>
 
-            <Image x:Name="imgUpload" HorizontalAlignment="Left" Height="33" Margin="212,0,0,0" VerticalAlignment="Top" Width="33" Source="images/upload.png" MouseUp="imgUpload_MouseUp" Visibility="Hidden">
-                <Image.Effect>
-                    <BlurEffect Radius="1"/>
-                </Image.Effect>
+            <Image x:Name="imgUpload" RenderOptions.BitmapScalingMode="Fant" HorizontalAlignment="Left" Height="33" Margin="212,0,0,0" VerticalAlignment="Top" Width="33" Source="images/upload.png" MouseUp="imgUpload_MouseUp" Visibility="Hidden">
             </Image>
             <Image x:Name="imgDownload" HorizontalAlignment="Left" Height="33" Margin="144,0,0,0" VerticalAlignment="Top" Width="33" Source="images/download.png" MouseUp="imgDownload_MouseUp" Visibility="Hidden">
                 <Image.Effect>

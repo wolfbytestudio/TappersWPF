@@ -90,10 +90,8 @@ C:\Users\30008095\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TransactionCo
 C:\Users\30008095\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.g.resources
 C:\Users\30008095\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.Properties.Resources.resources
 C:\Users\30008095\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.csproj.GenerateResource.Cache
-C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\bin\Debug\TappersWPF.exe.config
-C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.exe
-C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.pdb
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\bin\Debug\Tappers.accdb
+C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\bin\Debug\TappersWPF.exe.config
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\bin\Debug\TappersWPF.exe
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\bin\Debug\TappersWPF.pdb
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\ContactControl.baml
@@ -113,3 +111,5 @@ C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TransactionContro
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.g.resources
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.Properties.Resources.resources
 C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.csproj.GenerateResource.Cache
+C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.exe
+C:\Users\Zack\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\TappersWPF.pdb

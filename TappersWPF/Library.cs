@@ -143,7 +143,7 @@ namespace TappersWPF
         /// </summary>
         private class DBConnection
         {
-            private string ConnString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\Tappers.accdb;Persist Security Info=False";
+            private string ConnString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+Cache.DIRECTORY+"Tappers.accdb;Persist Security Info=False";
 
             private OleDbConnection conn;
             private OleDbCommand cmd;
