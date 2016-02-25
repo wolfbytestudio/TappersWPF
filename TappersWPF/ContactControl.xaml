@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="TappersWPF.ContactControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="85" Width="350" MouseEnter="UserControl_MouseEnter" MouseUp="UserControl_MouseUp">
+    <Grid x:Name="grdMain" Margin="0,0,0,0" Background="#FFF8F8F8">
+        <Label x:Name="lblName" Content="Name" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top" Width="214" FontSize="20"/>
+        <Rectangle x:Name="recBackground" Fill="#FF29B1FF" HorizontalAlignment="Left" Height="50" VerticalAlignment="Center" Width="50" Margin="7,18,0,17" RadiusX="100" RadiusY="100"/>
+        <TextBlock x:Name="lblTotal" HorizontalAlignment="Left" Margin="65,44,0,0" VerticalAlignment="Top" Width="230" Height="41" Foreground="#FF7A7A7A" TextWrapping="Wrap"><Run Language="en-gb" Text="Name owes you a total of £2305"/><InlineUIContainer>
+        		
+        	</InlineUIContainer></TextBlock>
+        <Label x:Name="lblDate" Content="23/02/2016" HorizontalAlignment="Left" Margin="279,7,0,0" VerticalAlignment="Top" Foreground="#FFACACAC" FontSize="10.667"/>
+        <Rectangle x:Name="recDivider" Fill="#FFC5C5C5" Margin="60,84,0,0" Height="01"/>
+        <TextBlock x:Name="lblDelete" HorizontalAlignment="Left" Margin="295,28,0,0" TextWrapping="Wrap" Text="x" VerticalAlignment="Top" Height="35" Width="34" Foreground="#FFCD8686" FontSize="26.667" FontFamily="Segoe UI Light" TextAlignment="Center" Padding="0,0,0,1" MouseEnter="lblDelete_MouseEnter" MouseLeave="lblDelete_MouseLeave" MouseUp="lblDelete_MouseUp"/>
+        <Image x:Name="imgSmallCharacter" HorizontalAlignment="Left" Height="50" VerticalAlignment="Center" Width="50" Margin="7,18,0,17"/>
+    </Grid>
+</UserControl>

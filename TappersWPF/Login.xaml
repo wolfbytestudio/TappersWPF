@@ -1,0 +1,19 @@
+﻿<Page x:Class="TappersWPF.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      Height="616.045" Width="880"
+	Title="Login" Loaded="Page_Loaded" VerticalAlignment="Top">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Background="#FFF8F8F8" Width="880" Height="616">
+        <TextBlock HorizontalAlignment="Center" Margin="337,154,349,436" TextWrapping="Wrap" VerticalAlignment="Center" Height="26" Width="194"><Run Language="en-gb" Text="Username"/></TextBlock>
+        <TextBox x:Name="txtUsername" Height="24" Margin="337,180,349,412" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Width="194" Text="zack"/>
+        <TextBlock Text="Password" HorizontalAlignment="Center" Margin="337,209,349,381" VerticalAlignment="Center" Width="194"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" Margin="337,240,349,0" VerticalAlignment="Top" Width="194" Height="24" Password="davidson"/>
+        <Button Content="Login" HorizontalAlignment="Center" Margin="337,290,349,306" VerticalAlignment="Center" Width="194" Click="Button_Click"/>
+        <TextBlock x:Name="lblWrong" Text="Wrong username or password" HorizontalAlignment="Left" Margin="337,267,0,0" VerticalAlignment="Top" Width="194" Height="21" Foreground="Red" TextAlignment="Center" Visibility="Hidden"/>
+
+    </Grid>
+</Page>
