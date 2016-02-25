@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\30008095\Desktop\TappersWPF\TappersWPF\obj\Debug\
+C:\Users\30008095\Documents\GitHub\TappersWPF\TappersWPF\obj\Debug\
 TappersWPF
 none
 false
 DEBUG;TRACE
-C:\Users\30008095\Desktop\TappersWPF\TappersWPF\App.xaml
+C:\Users\30008095\Documents\GitHub\TappersWPF\TappersWPF\App.xaml
 5-284036604
 1736372526
 23-648062503
 21-542352029
 ContactControl.xaml;Login.xaml;MainPage.xaml;MainWindow.xaml;TransactionControl.xaml;
 
-True
+False
 

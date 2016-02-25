@@ -40,6 +40,9 @@ namespace TappersWPF
 
         private ContactControl delete;
 
+        private BlurEffect mainBlurEffect = new BlurEffect();
+
+
         public MainPage()
         {
             Instance = this;
@@ -54,11 +57,19 @@ namespace TappersWPF
 
             lblTotalEveryone.Text = getTotal();
 
+            mainBlurEffect.RenderingBias = RenderingBias.Quality;
+            mainBlurEffect.Radius = 7;
+            mainBlurEffect.KernelType = KernelType.Gaussian;
+
 
         }
 
         public string getTotal()
         {
+            if(stkContacts.Children.Count == 0)
+            {
+                return "There are no contacts!";
+            }
             double totalAm = 0;
             foreach(Contact c in Cache.Instance.GetLibrary.Contacts)
             {
@@ -131,8 +142,10 @@ namespace TappersWPF
                 rec.RadiusY = 100;
                 rec.Margin = new Thickness(0, 0, 5, 5);
                 rec.Stroke = new SolidColorBrush(Colors.Black);
+                LinearGradientBrush gradientBrush = new LinearGradientBrush(Utils.getBackgroundColour(bg.PrimaryColour
+), Utils.getBackgroundColour(bg.SecondaryColour), new Point(0.5, 0), new Point(0.5, 1));
                 rec.MouseUp += bg_mouseUp;
-                rec.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString(bg.PrimaryColour));
+                rec.Fill = gradientBrush;
                 backgroundBoxes.Add(rec, bg);
                 stkBackgrounds.Children.Add(rec);
             }
@@ -163,11 +176,18 @@ namespace TappersWPF
 
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
+            if(txtNewContactName.Text == "")
+            {
+                MessageBox.Show("Please add a name", "error!");
+                return;
+            }
             string name = txtNewContactName.Text;
             Contact c = new Contact(Contact.getRandomID(), name, characterSelected, backgroundSelected, null, Account.yourID);
             Cache.Instance.GetLibrary.addContact(c);
             addToScreen(c);
             exitNewContact();
+
+            lblTotalEveryone.Text = getTotal();
         }
 
 
@@ -251,12 +271,8 @@ namespace TappersWPF
             {
                 grdNewContact.Visibility = System.Windows.Visibility.Visible;
                 recBlackbakground.Visibility = System.Windows.Visibility.Visible;
-                BlurEffect s = new BlurEffect();
-                s.RenderingBias = RenderingBias.Quality;
-                s.Radius = 7;
-                s.KernelType = KernelType.Gaussian;
 
-                grdMain.Effect = s;
+                sendBackgroundblur();
             }
             catch
             {
@@ -276,12 +292,7 @@ namespace TappersWPF
             recBlackbakground.Visibility = Visibility.Visible;
             grdConfirm.Visibility = Visibility.Visible;
 
-            BlurEffect s = new BlurEffect();
-            s.RenderingBias = RenderingBias.Quality;
-            s.Radius = 7;
-            s.KernelType = KernelType.Gaussian;
-
-            grdMain.Effect = s;
+            sendBackgroundblur();
 
             lblConfirmDeleteText.Text = "Are you sure you want to delete the contact " + toDelete.BindedContact.Name + "?";
             
@@ -343,18 +354,30 @@ namespace TappersWPF
                 MainPage.Instance.rightGrid(Visibility.Hidden);
             }
             lblTotalEveryone.Text = getTotal();
+
+
         }
 
         private void lblNewTransaction_MouseUp(object sender, MouseButtonEventArgs e)
         {
             this.grdNewTransaction.Visibility = Visibility.Visible;
             this.recBlackbakground.Visibility = Visibility.Visible;
+
+            sendBackgroundblur();
+        }
+
+        
+
+        public void sendBackgroundblur()
+        {
+            grdMain.Effect = mainBlurEffect;
         }
 
         public void closeTransactionBox()
         {
             this.grdNewTransaction.Visibility = Visibility.Hidden;
             this.recBlackbakground.Visibility = Visibility.Hidden;
+            grdMain.Effect = null;
         }
 
         private void btnNewTranConfirm_Click(object sender, RoutedEventArgs e)
@@ -400,6 +423,11 @@ namespace TappersWPF
             }
 
             lblTotalTransactions.Text = selectedPage.getTotal();
+        }
+
+        private void btnNewTranCancel_Click(object sender, RoutedEventArgs e)
+        {
+            closeTransactionBox();
         }
     }
 }

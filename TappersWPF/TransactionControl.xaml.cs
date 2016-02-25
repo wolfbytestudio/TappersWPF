@@ -32,6 +32,10 @@ namespace TappersWPF
 
             lblDate.Text = bindedTransaction.Date;
             lblReason.Text = bindedTransaction.Reason;
+            if(lblReason.Text == "")
+            {
+                lblReason.Text = "Reason unspecific";
+            }
             contact = Cache.Instance.getContactForID(bindedTransaction.ContactID);
 
             lblTitle.Text += generateText();

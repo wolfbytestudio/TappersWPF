@@ -4,13 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TappersWPF"
-             mc:Ignorable="d" Width="247" Height="97.333" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave">
-    <Grid x:Name="grdMain" Background="White" Margin="10,0,0,0" Height="87" VerticalAlignment="Top">
-        <Image x:Name="imgToFrom" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="65" Margin="0,10,0,0" Source="images/to_icon.png"/>
-        <Rectangle x:Name="recDiv" Fill="#FFD6D6D6" HorizontalAlignment="Left" Height="1" Margin="0,86,0,0" VerticalAlignment="Top" Width="239"/>
-        <TextBlock x:Name="lblTitle" Margin="64,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" FontSize="14"><Run Language="en-gb" Text="You lent £50 to Zack and for no reason, wrap"/></TextBlock>
-        <TextBlock x:Name="lblDate" HorizontalAlignment="Left" Margin="6,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="LightGray" FontSize="10" Width="49" TextAlignment="Center"><Run Language="en-gb" Text="01/12/16"/></TextBlock>
-        <TextBlock x:Name="lblReason" Margin="63,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" FontSize="10" Foreground="#FF858585"><Run Language="en-gb" Text="Reason unspecific."/></TextBlock>
+             mc:Ignorable="d" Width="500" Height="99" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave">
+    <Grid x:Name="grdMain" Background="White" Margin="0,5,22,0" Height="87" VerticalAlignment="Top" HorizontalAlignment="Right" Width="385">
+        <Rectangle Fill="#FFCBCBCB" HorizontalAlignment="Left" Height="99" Margin="-51,-5,0,-7" VerticalAlignment="Top" Width="2"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="65" Margin="-82,10,0,0" VerticalAlignment="Top" Width="65" RadiusX="65" RadiusY="65" Stroke="#FFCBCBCB" StrokeThickness="2">
+
+        </Rectangle>
+        <Image x:Name="imgToFrom" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="65" Margin="-82,10,0,0" Source="images/to_icon.png"/>
+        <Rectangle x:Name="recDiv" Fill="#FFB6B6B6" HorizontalAlignment="Left" Height="1" Margin="0,86,0,0" VerticalAlignment="Top" Width="490"/>
+        <TextBlock x:Name="lblTitle" Margin="10,6,70,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" FontSize="16"><Run Language="en-gb" Text="You lent £50 to Zack and for no reason, wrap"/></TextBlock>
+        <TextBlock x:Name="lblDate" HorizontalAlignment="Left" Margin="315,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFB0B0B0" Width="65" TextAlignment="Center" Height="17"><Run Language="en-gb" Text="01/12/16"/></TextBlock>
+        <TextBlock x:Name="lblReason" Margin="10,33,53,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="54" Foreground="#FF858585"><Run Language="en-gb" Text="Place holder reason"/></TextBlock>
 
     </Grid>
 </UserControl>

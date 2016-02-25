@@ -12,7 +12,7 @@
         <TextBox x:Name="txtUsername" Height="24" Margin="337,180,349,412" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Width="194" Text="zack"/>
         <TextBlock Text="Password" HorizontalAlignment="Center" Margin="337,209,349,381" VerticalAlignment="Center" Width="194"/>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" Margin="337,240,349,0" VerticalAlignment="Top" Width="194" Height="24" Password="davidson"/>
-        <Button Content="Login" HorizontalAlignment="Center" Margin="337,290,349,306" VerticalAlignment="Center" Width="194" Click="Button_Click"/>
+        <Button Content="Login" HorizontalAlignment="Center" Margin="337,289,349,297" VerticalAlignment="Center" Width="194" Click="Button_Click" Height="30"/>
         <TextBlock x:Name="lblWrong" Text="Wrong username or password" HorizontalAlignment="Left" Margin="337,267,0,0" VerticalAlignment="Top" Width="194" Height="21" Foreground="Red" TextAlignment="Center" Visibility="Hidden"/>
 
     </Grid>

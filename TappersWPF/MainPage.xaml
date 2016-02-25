@@ -30,14 +30,17 @@
                 <Rectangle x:Name="recRightColour" Fill="#FFC3C3D1" Height="224" VerticalAlignment="Top"/>
                 <Rectangle Fill="#3F000000" HorizontalAlignment="Left" Height="33" VerticalAlignment="Top" Width="515"/>
                 <TextBlock x:Name="txtRightName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Foreground="#FFF8F8F8" FontSize="18" Width="515" TextAlignment="Center" Margin="0,4,0,0"/>
-                <Image x:Name="imgBigCharacter" HorizontalAlignment="Left" Height="170" Margin="177,54,0,0" VerticalAlignment="Top" Width="170" Stretch="Fill" />
+                <Image x:Name="imgBigCharacter" HorizontalAlignment="Left" Height="170" Margin="177,54,0,0" VerticalAlignment="Top" Width="170" Stretch="Fill" Source="images/bin_history.png" >
+                    
+                </Image>
                 <ScrollViewer HorizontalAlignment="Left" Height="315" Margin="0,301,0,0" VerticalAlignment="Top" Width="515">
-                    <WrapPanel x:Name="stkTransactions" Height="auto" Width="498">
+                    <WrapPanel x:Name="stkTransactions" Height="auto" Width="498" Background="#FFE4E4E4">
                     </WrapPanel>
                 </ScrollViewer>
-                <TextBlock HorizontalAlignment="Left" Margin="10,268,0,0" TextWrapping="Wrap" Text="Transaction History" VerticalAlignment="Top" Height="28" Width="495" Foreground="#FF0F0F0F" FontSize="18" TextAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,260,0,0" TextWrapping="Wrap" Text="Transaction History" VerticalAlignment="Top" Height="36" Width="495" Foreground="#FF0F0F0F" FontSize="26" TextAlignment="Center"/>
                 <TextBlock x:Name="lblNewTransaction" HorizontalAlignment="Left" Margin="490,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="25" FontSize="30" MouseUp="lblNewTransaction_MouseUp"><Run Language="en-gb" Text="+"/></TextBlock>
-                <TextBlock x:Name="lblTotalTransactions" HorizontalAlignment="Left" Margin="10,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="495" Foreground="#FF999999" TextAlignment="Center"><Run Language="en-gb" Text="Name owes you a total of"/></TextBlock>
+                <TextBlock x:Name="lblTotalTransactions" HorizontalAlignment="Left" Margin="10,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="495" Foreground="#FF999999" TextAlignment="Center" Height="21" Background="#FFF8F8F8"><Run Language="en-gb" Text="Name owes you a total of"/></TextBlock>
+                <Rectangle Fill="#FFB2B2B2" HorizontalAlignment="Left" Height="1" Margin="0,300,0,0" VerticalAlignment="Top" Width="515"/>
 
             </Grid>
 
@@ -67,7 +70,7 @@
             <RadioButton x:Name="rdbFrom" Content="Lent from" HorizontalAlignment="Left" Margin="245,116,0,0" VerticalAlignment="Top" Width="91" Height="33" FontSize="18"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="78" FontSize="18"><Run Language="en-gb" Text="Reason:"/></TextBlock>
             <TextBox x:Name="txtNewTranReason" HorizontalAlignment="Left" Height="33" Margin="93,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297" FontSize="18"/>
-            <Button x:Name="btnNewTranCancel" Content="Cancel" HorizontalAlignment="Left" Margin="35,256,0,0" VerticalAlignment="Top" Width="108" Height="37" FontSize="16"/>
+            <Button x:Name="btnNewTranCancel" Content="Cancel" HorizontalAlignment="Left" Margin="35,256,0,0" VerticalAlignment="Top" Width="108" Height="37" FontSize="16" Click="btnNewTranCancel_Click"/>
             <Button x:Name="btnNewTranConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="245,256,0,0" VerticalAlignment="Top" Width="108" Height="37" FontSize="18" Click="btnNewTranConfirm_Click"/>
 
         </Grid>

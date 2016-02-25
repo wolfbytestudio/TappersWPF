@@ -45,7 +45,12 @@ namespace TappersWPF
 
             Background bg = Cache.Instance.getCachedBackground(bindedContact.BackgroundColour);
 
-            recBackground.Fill = new SolidColorBrush(Utils.getBackgroundColour(bg.PrimaryColour));
+            LinearGradientBrush gradientBrush = new LinearGradientBrush(Utils.getBackgroundColour(bg.PrimaryColour
+    ), Utils.getBackgroundColour(bg.SecondaryColour), new Point(0.5, 0), new Point(0.5, 1));
+
+            Background = gradientBrush;
+
+            recBackground.Fill = gradientBrush;
 
             imgSmallCharacter.Source = Cache.Instance.getLargeImageFor(bindedContact.Character);
 
