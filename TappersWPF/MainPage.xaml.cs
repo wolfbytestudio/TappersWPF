@@ -370,6 +370,7 @@ namespace TappersWPF
             {
                 toDeleteTransaction._Contact.Transactions.Remove(toDeleteTransaction.BindedTransaction);
                 stkTransactions.Children.Remove(toDeleteTransaction);
+
             }
             else
             {
@@ -391,7 +392,10 @@ namespace TappersWPF
             lblTotalEveryone.Text = getTotal();
             toDeleteTransaction = null;
             contactToDelete = null;
+
             lblTotalTransactions.Text = selectedPage.getTotal();
+            lblTotalEveryone.Text = getTotal();
+            selectedPage.lblTotal.Text = selectedPage.getTotal();
 
         }
 
@@ -442,6 +446,7 @@ namespace TappersWPF
 
             lblTotalTransactions.Text = selectedPage.getTotal();
             lblTotalEveryone.Text = getTotal();
+            selectedPage.lblTotal.Text = selectedPage.getTotal();
         }
 
 
