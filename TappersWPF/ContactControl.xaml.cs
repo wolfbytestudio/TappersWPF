@@ -60,10 +60,14 @@ namespace TappersWPF
         public string getTotal()
         {
             double totalAm = 0;
+
             if (BindedContact.Transactions == null)
-                {
-                    BindedContact.Transactions = new List<Transaction>();
-                }
+            {
+                BindedContact.Transactions = new List<Transaction>();
+            }
+            
+
+
             foreach (Transaction tran in BindedContact.Transactions)
                 {
                     if (tran.Type == TransactionType.TO)

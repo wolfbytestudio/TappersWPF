@@ -134,6 +134,16 @@ namespace TappersWPF
 
         }
 
+
+        public void getAllBackgrounds()
+        {
+            if (backgrounds.Count <= 1)
+            {
+                return;
+            }
+        }
+
+
         public void attemptBackgroundUpdates()
         {
             if(backgrounds == null)
@@ -156,15 +166,6 @@ namespace TappersWPF
             }
 
         }
-
-        public void getAllBackgrounds()
-        {
-            if(backgrounds.Count <= 1)
-            {
-                return;
-            }
-        }
-
 
         public static void saveCache()
         {

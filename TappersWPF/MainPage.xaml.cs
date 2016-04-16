@@ -166,8 +166,13 @@ namespace TappersWPF
 
             Rectangle sen = (Rectangle) sender;
 
-            LinearGradientBrush gradientBrush = new LinearGradientBrush(Utils.getBackgroundColour(backgroundBoxes[sen].PrimaryColour
-                ), Utils.getBackgroundColour(backgroundBoxes[sen].SecondaryColour), new Point(0.5, 0), new Point(0.5, 1));
+            LinearGradientBrush gradientBrush 
+                = new LinearGradientBrush(
+                    Utils.getBackgroundColour(backgroundBoxes[sen].PrimaryColour),
+                    Utils.getBackgroundColour(backgroundBoxes[sen].SecondaryColour),
+                    new Point(0.5, 0),
+                    new Point(0.5, 1) );
+
             Background = gradientBrush;
 
             recBackgroundPreview.Fill = gradientBrush; 
